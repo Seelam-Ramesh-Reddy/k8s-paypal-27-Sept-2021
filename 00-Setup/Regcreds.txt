@@ -1,3 +1,26 @@
-   21  docker login
-   22  kubectl create secret generic regcred --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson -n kube-system
-   23  kubectl apply -f calico.yaml -n kube-system
+## Pull the Calico Config
+```
+wget  https://docs.projectcalico.org/manifests/calico.yaml
+```
+
+## Hope you have docker login, if not please sign up at hub.docker.com
+```
+docker login
+```
+
+## Create a Docker Hub Pull Secrets 
+```
+kubectl create secret generic regcred --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson -n kube-system
+```
+
+## Now Update the Calico Config YAML file with Pull Secrets
+```
+spec:
+  imagePullSecrets:
+  - name: regcred
+```
+
+## Apply the update config.
+```
+kubectl apply -f calico.yaml -n kube-system
+```
