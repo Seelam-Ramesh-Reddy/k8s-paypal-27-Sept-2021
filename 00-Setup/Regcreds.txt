@@ -22,3 +22,10 @@ spec:
 ```
 kubectl apply -f calico.yaml -n kube-system
 ```
+
+## Check the status: 
+```
+kubectl get daemonset calico-node -n kube-system
+ 
+kubectl get pods -n kube-system -o wide | grep -i calico
+```
