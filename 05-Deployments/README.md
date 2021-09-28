@@ -30,6 +30,19 @@
    63  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2 --record 
    64  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web --record 
    65  kubectl rollout history deploy helloworld-deployment
+       kubectl edit deploy helloworld-deployment
+       kubectl get deploy helloworld-deployment -o yaml > abc.yaml    
+```
+
+```
+  347  kubectl run hello-k8s --image=nginx --port=80 --dry-run
+  348  kubectl run hello-k8s --image=nginx --port=80 --dry-run -o yaml
+  349  kubectl run hello-k8s --image=nginx --port=80 --dry-run -o yaml  > abc.yaml
+  350  ls
+  351  kubectl apply -f abc.yaml
+```
+
+```
    66  ls
    67  kubectl get deployment 
    68  kubectl get deploy helloworld-deployment
