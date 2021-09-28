@@ -22,3 +22,8 @@
   252  kubectl delete -f helloworld-rc.yaml
 
 ```
+
+
+```
+ watch -n .5 kubectl get pods -o wide
+```
