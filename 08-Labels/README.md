@@ -1,4 +1,5 @@
-    1  ls
+``` 
+   1  ls
     2  kubectl get nodes 
     3  kubectl get nodes --show-labels
     4  ls
@@ -9,11 +10,11 @@
     9  kubectl get pods 
    10  kubectl describe pod helloworld-deployment-57986b947d-7p2nx
    11  kubectl get nodes
-   12  kubectl label nodes worker02 hardware=virtual
+   12  kubectl label nodes worker2 hardware=virtual
    13  kubectl get nodes --show-labels
    14  kubectl get pods 
    15  kubectl get pods -o wide 
-   16  kubectl label nodes worker01 hardware=virtual
+   16  kubectl label nodes worker1 hardware=virtual
    17  kubectl get pods -o wide 
    18  kubectl get nodes --show-labels
    19  kubectl get pods -o wide 
@@ -26,27 +27,26 @@
    26  kubectl create -f helloworld-nodeselector-multi.yaml 
    27  kubectl get pods 
    28  kubectl describe pod helloworld-deployment-2-7fd7bbcd7-86jfs
-   29  kubectl label nodes worker01 env=prod
+   29  kubectl label nodes worker1 env=prod
    30  kubectl get pods 
    31  kubectl get pods -o wide 
    32  kubectl get nodes --show-labels
    33  kubectl get pods -o wide 
-   34  kubectl label nodes worker01 env-
-   35  kubectl label nodes worker01 hardware-
+   34  kubectl label nodes worker1 env-
+   35  kubectl label nodes worker1 hardware-
    36  kubectl get nodes --show-labels
    37  kubectl get pods -o wide 
-   38  kubectl label nodes worker01 hardware=virtual
+   38  kubectl label nodes worker1 hardware=virtual
    39  kubectl get nodes --show-labels
-   40  kubectl label nodes worker02 hardware-
+   40  kubectl label nodes worker2 hardware-
    41  kubectl get nodes --show-labels
    42  kubectl get pods -o wide 
    43  kubectl scale --replicas=5 deploy helloworld-deployment
    44  kubectl get pods -o wide 
    45  ls
-   46  kubectl label nodes worker01 hardware-
-   47  kubectl label nodes worker01 env-
-   48  kubectl label nodes worker02 env-
-   49  kubectl get pods 
-   50  ls
-   51  history 
-   52  history > History.txt
+   46  kubectl label nodes worker1 hardware-
+   47  kubectl label nodes worker1 env-
+   48  kubectl label nodes worker2 env-
+   49  kubectl get pods
+
+``` 
